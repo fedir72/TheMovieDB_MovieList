@@ -8,6 +8,7 @@
 import Foundation
 
 extension Movie {
+    
     //MARK: - функция загрузки стабов из проэкта
     static var stubbedMovies: [Movie] {
         let response: MovieResponse? = try? Bundle.main.loadAndDecodeJSON(filename: "movie_list")

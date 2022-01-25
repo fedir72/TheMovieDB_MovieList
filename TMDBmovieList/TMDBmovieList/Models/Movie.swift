@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Decodable {
+struct Movie: Decodable, Identifiable {
     
     let id: Int
     let title: String
@@ -18,6 +18,15 @@ struct Movie: Decodable {
     let voteCount: Int
     let runtime: Int?
     // let releaseDate: String?
+    
+    //MARK: - урл к картинкам
+    var backdropURL: URL {
+        return URL(string: "https://image.tmdb.org/t/p/w500\(backdropPath ?? "")")!
+    }
+    
+    var posterURL: URL {
+        return URL(string: "https://image.tmdb.org/t/p/w500\(posterPath ?? "")")!
+    }
 }
 
 struct MovieResponse: Decodable {
